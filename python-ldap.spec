@@ -18,6 +18,7 @@ Patch1:		%{name}-Makefile.patch
 Patch2:		%{name}-no_ufn.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 2.1
+BuildRequires:	rpm-pythonprov
 BuildRequires:	openldap-devel >= 1.2.6
 %requires_eq	python
 Requires:	openldap >= 1.2.6
