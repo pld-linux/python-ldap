@@ -6,13 +6,6 @@ Version:	1.10alpha3
 Release:	2
 License:	Public Domain 
 Group:		Development/Libraries
-Group(de):	Entwicklung/Bibliotheken
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Source0:	http://prdownloads.sourceforge.net/python-ldap/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-openldap2.x.patch
 Patch1:		%{name}-Makefile.patch
