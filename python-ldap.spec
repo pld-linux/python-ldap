@@ -1,11 +1,12 @@
+%include	/usr/lib/rpm/macros.python
 Summary:	LDAP Module for Python
 Summary(pl):	Modu³ LDAP dla Pythona
 Name:		python-ldap
 Version:	1.10alpha3
-Release:	1
+Release:	2
 License:	Public Domain 
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
@@ -17,7 +18,7 @@ Patch0:		%{name}-openldap2.x.patch
 Patch1:		%{name}-Makefile.patch
 Patch2:		%{name}-no_ufn.patch
 URL:		http://python-ldap.sourceforge.net/
-BuildRequires:	python-devel >= 2.1
+BuildRequires:	python-devel >= 2.2
 BuildRequires:	rpm-pythonprov
 BuildRequires:	openldap-devel >= 1.2.6
 %requires_eq	python
@@ -26,8 +27,6 @@ Provides:	ldapmodule
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	ldapmodule
 Obsoletes:	python-ldapmodule
-
-%include /usr/lib/rpm/macros.python
 
 %description
 This module provides access to the LDAP (C language) library.
