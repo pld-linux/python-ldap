@@ -6,7 +6,7 @@ Version:	2.0.0pre06
 Release:	1
 License:	Public Domain
 Group:		Libraries/Python
-Source0:	http://prdownloads.sourceforge.net/python-ldap/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/python-ldap/%{name}-%{version}.tar.gz
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-sasl2.patch
 URL:		http://python-ldap.sourceforge.net/
