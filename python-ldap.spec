@@ -50,7 +50,9 @@ CFLAGS="%{rpmcflags}" sh configure --prefix=%{_prefix}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{py_sitedir},%{_examplesdir}/%{name}}
 
-%{__make} install DESTDIR="$RPM_BUILD_ROOT"
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install Demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 gzip -9fn README TODO ChangeLog Doc/_ldap/*
