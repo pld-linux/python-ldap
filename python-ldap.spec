@@ -11,7 +11,7 @@ URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	rpm-pythonprov
 BuildRequires:	openldap-devel >= 1.2.6
-%requires_eq	python-modules
+%pyrequires_eq	python-modules
 Requires:	openldap >= 1.2.6
 Provides:	ldapmodule
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
