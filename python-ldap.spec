@@ -8,7 +8,7 @@ License:	Public Domain
 Group:		Libraries/Python
 Source0:	http://prdownloads.sourceforge.net/python-ldap/%{name}-%{version}.tar.gz
 URL:		http://python-ldap.sourceforge.net/
-BuildRequires:	python-devel >= 2.2
+BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
 BuildRequires:	openldap-devel >= 1.2.6
 %pyrequires_eq	python-modules
