@@ -7,12 +7,14 @@ Release:	1
 License:	Public Domain
 Group:		Libraries/Python
 Source0:	http://prdownloads.sourceforge.net/python-ldap/%{name}-%{version}.tar.gz
+Patch0:		%{name}-config.patch
+Patch1:		%{name}-sasl2.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
-BuildRequires:	openldap-devel >= 1.2.6
+BuildRequires:	openldap-devel >= 2.1.0
+BuildRequires:	cyrus-sasl >= 2.1.0
 %pyrequires_eq	python-modules
-Requires:	openldap >= 1.2.6
 Provides:	ldapmodule
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	ldapmodule
@@ -26,6 +28,8 @@ Modu³ ten umo¿liwia dostêp do bibliotek LDAP.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 python setup.py build
