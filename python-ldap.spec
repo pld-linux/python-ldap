@@ -1,5 +1,3 @@
-%define python_sitepkgsdir %(echo `python -c "import sys; print (sys.prefix + '/lib/python' + sys.version[:3] + '/site-packages/')"`)
-
 Summary:	LDAP Module for Python
 Summary(pl):	Modu³ LDAP dla Pythona
 Name:		python-ldap
@@ -22,10 +20,13 @@ URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 2.1
 Requires:	python >= 1.5
 Requires:	openldap >= 1.2.6
+BuildRequires:	openldap-devel >= 1.2.6
 Provides:	ldapmodule
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	ldapmodule
 Obsoletes:	python-ldapmodule
+
+%include /usr/lib/rpm/macros.python
 
 %description
 This module provides access to the LDAP (C language) library.
@@ -46,7 +47,7 @@ CFLAGS="%{rpmcflags}" sh configure --prefix=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{python_sitepkgsdir},%{_examplesdir}/%{name}}
+install -d $RPM_BUILD_ROOT{%{py_sitedir},%{_examplesdir}/%{name}}
 
 %{__make} install DESTDIR="$RPM_BUILD_ROOT"
 install Demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
@@ -59,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Doc/_ldap/*.gz *.gz
-%dir %{python_sitepkgsdir}/%{name}/*.py*
-%attr(755,root,root) %{python_sitepkgsdir}/*.so
-%{python_sitepkgsdir}/*.pth
+%dir %{py_sitedir}/%{name}/*.py?
+%attr(755,root,root) %{py_sitedir}/*.so
+%{py_sitedir}/*.pth
 %{_examplesdir}/%{name}
