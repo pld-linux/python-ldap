@@ -4,7 +4,7 @@ Summary(pl):	Modu³ LDAP dla Pythona
 Name:		python-ldap
 Version:	1.10alpha3
 Release:	2
-License:	Public Domain 
+License:	Public Domain
 Group:		Development/Libraries
 Source0:	http://prdownloads.sourceforge.net/python-ldap/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-openldap2.x.patch
@@ -27,7 +27,7 @@ This module provides access to the LDAP (C language) library.
 %description -l pl
 Modu³ ten umo¿liwia dostêp do bibliotek LDAP.
 
-%prep        
+%prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
