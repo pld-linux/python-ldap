@@ -38,14 +38,12 @@ export PYTHONPATH
 
 python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
-gzip -9fn README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %attr(755,root,root) %{py_sitedir}/*.so
 %{py_sitedir}/*.py[co]
 
