@@ -18,9 +18,9 @@ Patch1:		%{name}-Makefile.patch
 Patch2:		%{name}-no_ufn.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 2.1
-Requires:	python >= 1.5
-Requires:	openldap >= 1.2.6
 BuildRequires:	openldap-devel >= 1.2.6
+%requires_eq	python
+Requires:	openldap >= 1.2.6
 Provides:	ldapmodule
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	ldapmodule
