@@ -17,6 +17,7 @@ Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	http://prdownloads.sourceforge.net/python-ldap/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-openldap2.x.patch
 Patch1:		%{name}-Makefile.patch
+Patch2:		%{name}-no_ufn.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 2.1
 Requires:	python >= 1.5
@@ -36,6 +37,7 @@ Modu³ ten umo¿liwia dostêp do bibliotek LDAP.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 # %%configure will not work!
