@@ -1,0 +1,12 @@
+diff -durN python-ldap-2.0.0pre06.orig/Modules/LDAPObject.c python-ldap-2.0.0pre06/Modules/LDAPObject.c
+--- python-ldap-2.0.0pre06.orig/Modules/LDAPObject.c	Fri Aug 16 20:03:47 2002
++++ python-ldap-2.0.0pre06/Modules/LDAPObject.c	Fri Jan 17 09:43:07 2003
+@@ -15,7 +15,7 @@
+ #include "options.h"
+ 
+ #ifdef HAVE_SASL
+-#include <sasl.h>
++#include <sasl/sasl.h>
+ #endif
+ 
+ static void free_attrs(char***);
