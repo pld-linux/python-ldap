@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 Summary:	LDAP Module for Python
 Summary(pl):	Modu³ LDAP dla Pythona
 Name:		python-ldap
