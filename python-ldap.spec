@@ -2,12 +2,12 @@
 Summary:	LDAP Module for Python
 Summary(pl):	Modu³ LDAP dla Pythona
 Name:		python-ldap
-Version:	2.0.0pre13
+Version:	2.0.0pre15
 Release:	1
 License:	Public Domain
 Group:		Libraries/Python
-# Source0-md5:	ec69151b7d674f99f7498df9763eced7
 Source0:	http://dl.sourceforge.net/python-ldap/%{name}-%{version}.tar.gz
+# Source0-md5:	f948b4399a6b8068c4aae0e9cf5f6842
 Patch0:		%{name}-sasl2.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 2.2.1
