@@ -7,6 +7,7 @@ Release:	1
 License:	Public Domain
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/python-ldap/%{name}-%{version}.tar.gz
+# Source0-md5:	7b0f7ff30bca97f7e9540ca9758961c2
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-sasl2.patch
 URL:		http://python-ldap.sourceforge.net/
