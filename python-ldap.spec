@@ -2,7 +2,7 @@ Summary:	LDAP Module for Python
 Summary(pl):	Modu³ LDAP dla Pythona
 Name:		python-ldap
 Version:	2.2.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	Public Domain
 Group:		Libraries/Python
@@ -49,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{py_sitedir}/*.so
 %{py_sitedir}/*.py[co]
-%{py_sitedir}/ldap/*
+%{py_sitedir}/ldap
