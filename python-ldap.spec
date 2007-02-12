@@ -1,5 +1,5 @@
 Summary:	LDAP Module for Python
-Summary(pl):	Modu≥ LDAP dla Pythona
+Summary(pl.UTF-8):   Modu≈Ç LDAP dla Pythona
 Name:		python-ldap
 Version:	2.2.1
 Release:	1
@@ -22,8 +22,8 @@ Obsoletes:	python-ldapmodule
 %description
 This module provides access to the LDAP (C language) library.
 
-%description -l pl
-Modu≥ ten umoøliwia dostÍp do bibliotek LDAP.
+%description -l pl.UTF-8
+Modu≈Ç ten umo≈ºliwia dostƒôp do bibliotek LDAP.
 
 %prep
 %setup -q
