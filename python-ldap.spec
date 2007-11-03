@@ -11,7 +11,7 @@ Source0:	http://dl.sourceforge.net/python-ldap/%{name}-%{version}.tar.gz
 Patch0:		%{name}-sasl2.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	openldap-devel >= 2.3.0
+BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	cyrus-sasl >= 2.1.0
 %pyrequires_eq	python-modules
 Provides:	ldapmodule
