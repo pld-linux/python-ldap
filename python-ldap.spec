@@ -10,14 +10,16 @@ Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}
 # Source0-md5:	645ef46405e4eb3963cea34f2e114f96
 Patch0:		%{name}-sasl2.patch
 URL:		http://python-ldap.sourceforge.net/
-BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	cyrus-sasl >= 2.1.0
+BuildRequires:	openldap-devel >= 2.4.6
+BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Provides:	ldapmodule
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	ldapmodule
 Obsoletes:	python-ldapmodule
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This module provides access to the LDAP (C language) library.
