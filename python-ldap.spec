@@ -43,7 +43,12 @@ CC="%{__cc}" \
 CFLAGS="%{rpmcflags}" \
 %{__python} setup.py build
 
-%{?with_tests:%{__python} setup.py test}
+%if %{with tests}
+%{__python} setup.py test
+
+PYTHONPATH=$(echo build/lib.linux-*/) \
+%{__python} -c "import ldap; print ldap.__version__; ldapo = ldap.initialize('localhost')"
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
