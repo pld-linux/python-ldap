@@ -1,7 +1,12 @@
+#
+# Conditional build:
+%bcond_without	tests	# do not perform "make test"
+
+%define 	module	ldap
 Summary:	LDAP Module for Python
 Summary(pl.UTF-8):	Moduł LDAP dla Pythona
-Name:		python-ldap
-Version:	2.4.9
+Name:		python-%{module}
+Version:	2.4.10
 Release:	1
 Epoch:		1
 License:	Public Domain
@@ -15,7 +20,7 @@ BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
-%pyrequires_eq	python-modules
+Requires:	python-modules
 Provides:	ldapmodule
 Obsoletes:	ldapmodule
 Obsoletes:	python-ldapmodule
@@ -32,16 +37,21 @@ Moduł ten umożliwia dostęp do bibliotek LDAP.
 %patch0 -p1
 
 %build
-python setup.py build
+CC="%{__cc}" \
+CFLAGS="%{rpmcflags}" \
+%{__python} setup.py build
+
+%{?with_tests:%{__python} setup.py test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+#PYTHONPATH=$RPM_BUILD_ROOT%{py_sitedir}
+%{__python} setup.py install \
+	--skip-build \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
 
-PYTHONPATH=$RPM_BUILD_ROOT%{py_sitedir}
-export PYTHONPATH
-
-python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
-find $RPM_BUILD_ROOT%{py_sitedir} -name "*.py" | xargs rm
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
