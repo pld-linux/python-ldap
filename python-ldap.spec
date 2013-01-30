@@ -14,6 +14,7 @@ Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
 # Source0-md5:	d76131af192771567d3f2d2aff9469a9
 Patch0:		%{name}-sasl2.patch
+Patch1:		build.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	cyrus-sasl >= 2.1.0
 BuildRequires:	openldap-devel >= 2.4.6
@@ -35,6 +36,7 @@ Moduł ten umożliwia dostęp do bibliotek LDAP.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 CC="%{__cc}" \
