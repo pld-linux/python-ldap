@@ -12,7 +12,7 @@ Epoch:		1
 License:	Public Domain
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
-# Source0-md5:	d76131af192771567d3f2d2aff9469a9
+# Source0-md5:	a15827ca13c90e9101e5e9405c1d83be
 Patch0:		%{name}-sasl2.patch
 Patch1:		build.patch
 URL:		http://python-ldap.sourceforge.net/
