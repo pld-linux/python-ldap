@@ -46,8 +46,9 @@ CFLAGS="%{rpmcflags}" \
 %if %{with tests}
 %{__python} setup.py test
 
+LDAPNOINIT=1 \
 PYTHONPATH=$(echo build/lib.linux-*/) \
-%{__python} -c "import ldap; print ldap.__version__; ldapo = ldap.initialize('localhost')"
+%{__python} -c "import ldap; print ldap.__version__; ldapo = ldap.initialize('ldap://localhost')"
 %endif
 
 %install
