@@ -2,17 +2,17 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 
-%define 	module	ldap
+%define		module	ldap
 Summary:	LDAP Module for Python
 Summary(pl.UTF-8):	Moduł LDAP dla Pythona
 Name:		python-%{module}
-Version:	2.4.10
+Version:	2.4.13
 Release:	1
 Epoch:		1
 License:	Public Domain
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
-# Source0-md5:	a15827ca13c90e9101e5e9405c1d83be
+# Source0-md5:	74b7b50267761540451eade44b2049ee
 Patch0:		%{name}-sasl2.patch
 Patch1:		build.patch
 URL:		http://python-ldap.sourceforge.net/
