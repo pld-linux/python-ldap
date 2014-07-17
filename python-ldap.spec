@@ -3,13 +3,13 @@
 %bcond_without	tests	# do not perform "make test"
 
 %define		module	ldap
-Summary:	LDAP Module for Python
-Summary(pl.UTF-8):	Moduł LDAP dla Pythona
+Summary:	LDAP client API for Python
+Summary(pl.UTF-8):	API klienckie LDAP dla Pythona
 Name:		python-%{module}
 Version:	2.4.15
 Release:	1
 Epoch:		1
-License:	Public Domain
+License:	Python-like
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
 # Source0-md5:	f12183c87579631584c4bbe2d85ad0d9
@@ -19,7 +19,7 @@ URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	cyrus-sasl >= 2.1.0
 BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	python-modules
+BuildRequires:	python-modules >= 1:2.5
 BuildRequires:	rpm-pythonprov
 Requires:	python-modules
 Provides:	ldapmodule
@@ -28,10 +28,20 @@ Obsoletes:	python-ldapmodule
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module provides access to the LDAP (C language) library.
+python-ldap provides an object-oriented API to access LDAP directory
+servers from Python programs. Mainly it wraps the OpenLDAP client libs
+for that purpose.
+
+Additionally the package contains modules for other LDAP-related stuff
+(e.g. processing LDIF, LDAPURLs, LDAPv3 sub-schema, etc.).
 
 %description -l pl.UTF-8
-Moduł ten umożliwia dostęp do bibliotek LDAP.
+Moduł python-ldap dostarcza zorientowane obiektowo API pozwalające na
+dostęp do usług katalogowych LDAP z poziomu programów w Pythonie.
+Głównie obudowuje w tym celu biblioteki klienckie OpenLDAP.
+
+Dodatkowo pakiet zawiera moduły do innych zadań związanych z LDAP (jak
+przetwarzanie LDIF, LDAPURL, podschematy LDAPv3 itp.).
 
 %prep
 %setup -q
@@ -66,8 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{py_sitedir}/*.so
-%{py_sitedir}/*.py[co]
+%doc CHANGES LICENCE README TODO
+%attr(755,root,root) %{py_sitedir}/_ldap.so
+%{py_sitedir}/dsml.py[co]
+%{py_sitedir}/ldapurl.py[co]
+%{py_sitedir}/ldif.py[co]
 %{py_sitedir}/ldap
-%{py_sitedir}/*.egg-info
+%{py_sitedir}/python_ldap-%{version}-py*.egg-info
