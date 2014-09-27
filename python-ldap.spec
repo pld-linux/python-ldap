@@ -6,13 +6,13 @@
 Summary:	LDAP client API for Python
 Summary(pl.UTF-8):	API klienckie LDAP dla Pythona
 Name:		python-%{module}
-Version:	2.4.16
+Version:	2.4.17
 Release:	1
 Epoch:		1
 License:	Python-like
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
-# Source0-md5:	75549bad7eaaf4949f6adf80334f0acc
+# Source0-md5:	298e0cebe2a256dc9efb00d5d1138d12
 Patch0:		%{name}-sasl2.patch
 Patch1:		build.patch
 URL:		http://python-ldap.sourceforge.net/
