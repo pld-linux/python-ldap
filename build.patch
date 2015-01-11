@@ -2,8 +2,8 @@
 +++ python-ldap-2.4.16/setup.cfg	2014-09-10 22:33:21.851210582 +0200
 @@ -1,6 +1,5 @@
  [_ldap]
--library_dirs = /opt/openldap/lib64 /usr/lib
--include_dirs = /opt/openldap/include /usr/include/sasl /usr/include
+-library_dirs = /opt/openldap-RE24/lib /usr/lib
+-include_dirs = /opt/openldap-RE24/include /usr/include/sasl /usr/include
 +include_dirs = /usr/include/sasl
  defines = HAVE_SASL HAVE_TLS HAVE_LIBLDAP_R
  extra_compile_args = 
