@@ -7,7 +7,7 @@ Summary:	LDAP client API for Python
 Summary(pl.UTF-8):	API klienckie LDAP dla Pythona
 Name:		python-%{module}
 Version:	2.4.19
-Release:	1
+Release:	2
 Epoch:		1
 License:	Python-like
 Group:		Libraries/Python
