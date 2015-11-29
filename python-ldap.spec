@@ -16,6 +16,7 @@ Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}
 Patch0:		%{name}-sasl2.patch
 Patch1:		build.patch
 URL:		http://python-ldap.sourceforge.net/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	cyrus-sasl >= 2.1.0
 BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	python-devel >= 1:2.5
