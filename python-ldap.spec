@@ -1,20 +1,19 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# do not perform "make test"
 
 %define		module	ldap
 Summary:	LDAP client API for Python
 Summary(pl.UTF-8):	API klienckie LDAP dla Pythona
 Name:		python-%{module}
-Version:	2.4.19
-Release:	3
+Version:	2.4.32
+Release:	1
 Epoch:		1
 License:	Python-like
 Group:		Libraries/Python
-Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
-# Source0-md5:	b941bf31d09739492aa19ef679e94ae3
+Source0:	https://pypi.python.org/packages/67/d9/fa0ea70d1792875745116ad62ac8d4bcb07550b15cded591bb57df6a6d9a/%{name}-%{version}.tar.gz
+# Source0-md5:	7c46c8a04acc227a778c7900c87cdfc7
 Patch0:		%{name}-sasl2.patch
-Patch1:		build.patch
 URL:		http://python-ldap.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	cyrus-sasl >= 2.1.0
@@ -47,7 +46,6 @@ przetwarzanie LDIF, LDAPURL, podschematy LDAPv3 itp.).
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %py_build
@@ -56,7 +54,7 @@ przetwarzanie LDIF, LDAPURL, podschematy LDAPv3 itp.).
 %{__python} setup.py test
 
 LDAPNOINIT=1 \
-PYTHONPATH=$(echo build/lib.linux-*/) \
+PYTHONPATH=$(echo build-2/lib.linux-*/) \
 %{__python} -c "import ldap; print ldap.__version__; ldapo = ldap.initialize('ldap://localhost')"
 %endif
 
