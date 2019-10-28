@@ -25,6 +25,7 @@ BuildRequires:	openldap-servers >= 2.4.6
 %if %{with python2}
 BuildRequires:	python-devel >= 1:2.7
 BuildRequires:	python-modules >= 1:2.7
+BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-pyasn1 >= 0.3.7
 BuildRequires:	python-pyasn1_modules >= 0.1.5
@@ -33,6 +34,7 @@ BuildRequires:	python-pyasn1_modules >= 0.1.5
 %if %{with python2}
 BuildRequires:	python3-devel >= 1:3.4
 BuildRequires:	python3-modules >= 1:3.4
+BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-pyasn1 >= 0.3.7
 BuildRequires:	python3-pyasn1_modules >= 0.1.5
