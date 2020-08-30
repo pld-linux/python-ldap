@@ -7,17 +7,18 @@
 Summary:	LDAP client API for Python 2
 Summary(pl.UTF-8):	API klienckie LDAP dla Pythona 2
 Name:		python-ldap
-Version:	3.1.0
-Release:	3
+Version:	3.3.1
+Release:	1
 Epoch:		1
 License:	Python-like
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/python-ldap/
 Source0:	https://files.pythonhosted.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
-# Source0-md5:	35d9a3ba265137646b2a9fd3d56d675d
+# Source0-md5:	7608579722c491e42f5f63b3f88a95fb
 URL:		http://python-ldap.sourceforge.net/
-BuildRequires:	cyrus-sasl >= 2.1.0
+BuildRequires:	cyrus-sasl-devel >= 2.1.0
 BuildRequires:	openldap-devel >= 2.4.6
+BuildRequires:	openssl-devel
 %if %{with tests}
 BuildRequires:	openldap >= 2.4.6
 BuildRequires:	openldap-servers >= 2.4.6
