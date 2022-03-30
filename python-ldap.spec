@@ -8,7 +8,7 @@ Summary:	LDAP client API for Python 2
 Summary(pl.UTF-8):	API klienckie LDAP dla Pythona 2
 Name:		python-ldap
 Version:	3.3.1
-Release:	6
+Release:	7
 Epoch:		1
 License:	Python-like
 Group:		Libraries/Python
