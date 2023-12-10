@@ -8,7 +8,7 @@ Summary:	LDAP client API for Python 2
 Summary(pl.UTF-8):	API klienckie LDAP dla Pythona 2
 Name:		python-ldap
 Version:	3.3.1
-Release:	7
+Release:	8
 Epoch:		1
 License:	Python-like
 Group:		Libraries/Python
@@ -42,11 +42,11 @@ BuildRequires:	python3-pyasn1_modules >= 0.1.5
 %endif
 %endif
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.710
+BuildRequires:	rpmbuild(macros) >= 1.714
 Requires:	python-modules >= 1:2.7
 Provides:	ldapmodule
-Obsoletes:	ldapmodule
-Obsoletes:	python-ldapmodule
+Obsoletes:	ldapmodule < 1.10
+Obsoletes:	python-ldapmodule < 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,6 +64,18 @@ Głównie obudowuje w tym celu biblioteki klienckie OpenLDAP.
 
 Dodatkowo pakiet zawiera moduły do innych zadań związanych z LDAP (jak
 przetwarzanie LDIF, LDAPURL, podschematy LDAPv3 itp.).
+
+%package -n python-slapdtest
+Summary:	Module for spawning test instances of OpenLDAP's slapd server
+Summary(pl.UTF-8):	Moduł do uruchamiania testowych instancji serwera slapd OpenLDAP
+Group:		Libraries/Python
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description -n python-slapdtest
+Module for spawning test instances of OpenLDAP's slapd server.
+
+%description -n python-slapdtest -l pl.UTF-8
+Moduł do uruchamiania testowych instancji serwera slapd OpenLDAP.
 
 %package -n python3-ldap
 Summary:	LDAP client API for Python 3
@@ -86,6 +98,18 @@ Głównie obudowuje w tym celu biblioteki klienckie OpenLDAP.
 
 Dodatkowo pakiet zawiera moduły do innych zadań związanych z LDAP (jak
 przetwarzanie LDIF, LDAPURL, podschematy LDAPv3 itp.).
+
+%package -n python3-slapdtest
+Summary:	Module for spawning test instances of OpenLDAP's slapd server
+Summary(pl.UTF-8):	Moduł do uruchamiania testowych instancji serwera slapd OpenLDAP
+Group:		Libraries/Python
+Requires:	python3-ldap = %{epoch}:%{version}-%{release}
+
+%description -n python3-slapdtest
+Module for spawning test instances of OpenLDAP's slapd server.
+
+%description -n python3-slapdtest -l pl.UTF-8
+Moduł do uruchamiania testowych instancji serwera slapd OpenLDAP.
 
 %prep
 %setup -q
@@ -117,14 +141,11 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %py_install
 
-%{__rm} -r $RPM_BUILD_ROOT%{py_sitedir}/slapdtest
 %py_postclean
 %endif
 
 %if %{with python3}
 %py3_install
-
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/slapdtest
 %endif
 
 %clean
@@ -139,6 +160,10 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/ldif.py[co]
 %{py_sitedir}/ldap
 %{py_sitedir}/python_ldap-%{version}-py*.egg-info
+
+%files -n python-slapdtest
+%defattr(644,root,root,755)
+%{py_sitedir}/slapdtest
 %endif
 
 %if %{with python3}
@@ -152,4 +177,8 @@ rm -rf $RPM_BUILD_ROOT
 %{py3_sitedir}/__pycache__/ldapurl.cpython-*.py[co]
 %{py3_sitedir}/__pycache__/ldif.cpython-*.py[co]
 %{py3_sitedir}/python_ldap-%{version}-py*.egg-info
+
+%files -n python3-slapdtest
+%defattr(644,root,root,755)
+%{py3_sitedir}/slapdtest
 %endif
